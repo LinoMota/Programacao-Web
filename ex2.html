@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Formulário de Contato</h1>
+
+		<fieldset>
+			<legend>Dados Básicos</legend>
+
+			<label>Nome :</label>
+			<input type="text" name="nome"> <br>
+
+			<label>Email :</label>
+			<input type="text" name="email" placeholder="seunome@dominio.com.br"> <br>
+
+			<label>Website :</label>
+			<input type="text" name="Website" value="http://"> <br>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>Seu curso no Instituto da Computação</legend>
+
+			<input type="radio" name="curso" value="cc" id="cc" > 
+			<label>Ciência da Computação</label> 
+			<br>
+
+			<input type="radio" name="curso" value="es" id="es" >
+			<label>Sistema da Informação</label> 
+			<br>
+			
+			<input type="radio" name="curso" value="ec" id="ec">
+			<label>Engenharia da Computação</label>
+			
+		</fieldset>
+
+
+		<fieldset>
+			<legend>Seu curso no Instituto da Computação</legend>
+
+			<label>Java</label>
+			<input type="checkbox" name="linguagens"> 
+
+			<label>C</label>
+			<input type="checkbox" name="linguagens"> 
+
+			<label>C++</label>
+			<input type="checkbox" name="linguagens">
+
+			<label>Perl</label>
+			<input type="checkbox" name="linguagens">
+
+			<label>Python</label>
+			<input type="checkbox" name="linguagens">
+
+			<label>JavaScript</label>
+			<input type="checkbox" name="linguagens">
+
+		</fieldset>
+
+		<fieldset>
+			<legend>Dados Complementares</legend>
+
+			<label>Cor favorita</label>
+			<input type="color" name="corFavorita">
+			<br>
+
+			<label>Data de nascimento</label>
+			<input type="date" name="dataDeNascimento">
+			<br>
+
+			<label>Ano de entrada em seu curso do IComp</label>
+			<input type="number" name="anoDeIngresso">
+			<br>
+
+			<label>Nota para este site</label>
+			<input type="range" value="0" name="notaDoSite">
+			<br>
+			
+		</fieldset>
+
+		<fieldset>
+			<legend>Área de atuação</legend>
+
+			<select name="area" id="area" >
+				<option value="1" selected>Banco de Dados</option>
+				<option value="2">Educação a Distância</option>
+				<option value="3">Engenharia de Software</option>
+				<option value="4">Otimização</option>
+				<option value="5">Programação para a Web</option>
+				<option value="6">Recuperação de Informação</option>
+				<option value="7">Redes de Computadores</option>
+			</select>
+			
+		</fieldset>
+
+
+		<fieldset>
+			<legend>Submeta seu currículo vitae</legend>
+
+			<input type="file" name="curriculoVitae">
+			
+		</fieldset>
+
+
+		<fieldset>
+			<legend>Escreva sua mensagem</legend>
+
+			<textarea cols="40" rows="5">Este é o valor padrão !</textarea>
+			
+		</fieldset>
+
+
+		<button>Resetar Dados</button>
+		<button>Enviar Mensagem</button>
+
+	</body>
+</html>
