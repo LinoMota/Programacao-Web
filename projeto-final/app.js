@@ -50,6 +50,7 @@ app.use(sass({
     src: path.resolve('public/scss'),
     dest: path.resolve('public/css'),
     debug: true,
+    outFile : 'main.css',
     outputStyle: 'compressed',
     prefix: '/css',
 }))
