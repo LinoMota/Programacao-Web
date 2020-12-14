@@ -1,0 +1,35 @@
+<div class="row mt-8">
+  <h1 class="col-11"> Cursos</h1>
+    <button type="button" class="btn btn-primary"  onclick="location.href = '/curso/create'" >Criar</button>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Sigla</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Área</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+       {{#each cursos}}
+
+    <tr class="table-active">
+    <tr class="table-dark">
+      <th scope="row">{{id}}</th>
+      <th scope="row">{{sigla}}</th>
+      <th scope="row">{{nome}}</th>
+      <th scope="row">{{descricao}}</th>
+      <th scope="row">{{Area.nome}}</th>
+      <th>
+          <a href="curso/update/{{id}}">editar</a>
+          <a href="curso/remove/{{id}}">deletar</a>
+          <a href="curso/read/{{id}}">visualizar</a>
+      </th>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>    

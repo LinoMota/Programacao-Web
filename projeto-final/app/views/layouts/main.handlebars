@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="icon" href="/img/chess.ico">
     <title>Vigilantes da Floresta</title>
 </head>
 
@@ -15,7 +14,7 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <div class="container">
             <a href="/" class="navbar-brand">
-                <h3><img class="logo" src="/img/chess.ico" style="width:36px" alt="" srcset="">&nbsp; Chess App</h3>
+                <h3>Vigilantes da Floresta</h3>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,41 +24,24 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
 
-                    {{#if user_data}}
-
                     <li class="nav-item">
-                        <a class="nav-link" href="/partida">Nova Partida</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/ranking">Ranking</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/curso">Curso</a>
+                        <a class="nav-link" href="/game">Jogar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/sobre">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout">Logout [{{user_data.nome}}]</a>
+                        <a class="nav-link" href="/interface">interface</a>
                     </li>
-                    {{else}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/sobre">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/signup">Sign Up</a>
-                    </li>
-                    {{/if}}
                 </ul>
             </div>
     </nav>
-    <main role="main">
-        {{{body}}}
-    </main>
+    
+    
+
     <div class="container">
+
+        {{{body}}}
 
         <footer id="footer">
             <hr>

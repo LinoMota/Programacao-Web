@@ -10,12 +10,24 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.hasOne(models.Areas)
+      console.log(models)
+      this.belongsTo(models.Area, {
+        foreignKey : 'areaId'
+      })
     }
   };
   Curso.init({
     sigla: DataTypes.STRING,
-    nome: DataTypes.STRING,
+    nome: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: {
+          args: [5, 40],
+          msg: 'O nome precisa ter entre 5 e 40 caracteres.'
+        }
+      }
+    },
     descricao: DataTypes.TEXT,
     areaId: DataTypes.INTEGER
   }, {
