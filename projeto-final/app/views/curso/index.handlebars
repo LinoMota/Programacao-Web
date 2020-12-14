@@ -1,6 +1,6 @@
 <div class="row mt-8">
   <h1 class="col-11"> Cursos</h1>
-    <button type="button" class="btn btn-primary"  onclick="location.href = '/curso/create'" >Criar</button>
+  <button type="button" class="btn btn-primary" onclick="location.href = 'create/'">Criar</button>
 </div>
 
 <table class="table table-hover">
@@ -15,7 +15,7 @@
     </tr>
   </thead>
   <tbody>
-       {{#each cursos}}
+    {{#each cursos}}
 
     <tr class="table-active">
     <tr class="table-dark">
@@ -25,11 +25,24 @@
       <th scope="row">{{descricao}}</th>
       <th scope="row">{{Area.nome}}</th>
       <th>
-          <a href="curso/update/{{id}}">editar</a>
-          <a href="curso/remove/{{id}}">deletar</a>
-          <a href="curso/read/{{id}}">visualizar</a>
+        <a href="curso/update/{{id}}">editar</a>
+        <a href="" onclick="return deleteHandler({{id}})">deletar</a>
+        <a href="curso/read/{{id}}">visualizar</a>
       </th>
     </tr>
     {{/each}}
   </tbody>
-</table>    
+</table>
+<script>
+
+  function deleteHandler(id) {
+    $.ajax({
+      url: 'curso/remove/' + id,
+      method: 'post',
+      success: function (r) {
+        location.reload()
+      }
+    })
+  }
+
+</script>

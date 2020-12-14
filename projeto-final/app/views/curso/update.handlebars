@@ -8,26 +8,35 @@
         <fieldset>
 </div>
 <div class="form-group">
-    <label for="sigla">Sigla</label>
-    <input type="text" maxlength="255" class="form-control" value="{{curso.sigla}}" name="sigla"
-        placeholder="Informe a Sigla do Curso">
+    <label for="sigla">Sigla :</label>
+    <input type="text" maxlength="255" class="form-control" value="{{curso.sigla}}" name="sigla" placeholder="Informe a Sigla do Curso">
+    <div class="invalid-feedback">{{showError errors 'sigla'}}</div>
 </div>
 
 <div class="form-group">
     <label for="nome">Nome : </label>
-    <input type="text" maxlength="255" class="form-control" value="{{curso.nome}}" name="nome"
-        placeholder="Informe o nome do Curso">
+    <input type="text" maxlength="255" class="form-control" value="{{curso.nome}}" name="nome" placeholder="Informe o nome do Curso">
+    <div class="invalid-feedback">{{showError errors 'nome'}}</div>
 </div>
 
 <div class="form-group">
     <label for="descricao">Descrição :</label>
-    <textarea class="form-control" id="descricao" name="descricao" rows="3">{{curso.descricao}}</textarea>
+    <textarea class="form-control" name="descricao" value="{{curso.descricao}}" rows="3"></textarea>
 </div>
 
 <div class="form-group">
     <label for="curso">Área :</label>
     <select class="form-control" id="areas" id="" name="area">
-        <option value="{{curso.area.id}}">{{curso.area.nome}}</option>
+        {{#each areas}}
+
+
+        {{#if id == curso.Area.id}}
+        <option value="{{id}}" selected>{{nome}}</option>
+        {{else}}
+        <option value="{{id}}">{{nome}}</option>
+        {{/if}}
+        
+        {{/each}}
     </select>
 </div><a hidden id="index"></a>
 <button class="btn btn-primary mt-3" id="send">Enviar</button>
@@ -35,3 +44,13 @@
 </form>
 
 </div>
+<script>
+    (() => {
+        const validationList = document.querySelectorAll('.invalid-feedback')
+        validationList.forEach(validation => {
+            if (String(validation.innerHTML).trim() != '')
+                validation.style.display = 'block'
+        })
+
+    })()
+</script>
