@@ -1,5 +1,7 @@
 (function () {
 
+  const gameDiv = document.querySelector('#game')
+
   const FPS = 1;
   let jogoIniciado = false
   let gameDimensions = [1243, 960];
@@ -85,7 +87,7 @@
 
       this.element.style.width = `${gameDimensions[0]}px`;
       this.element.style.height = '100px'
-      document.body.appendChild(this.element)
+      gameDiv.appendChild(this.element)
     }
 
     appendLife() {
@@ -127,7 +129,7 @@
       this.element.className = 'alerta';
       this.element.hidden = true
 
-      document.body.appendChild(this.element)
+      gameDiv.appendChild(this.element)
 
     }
 
@@ -147,7 +149,7 @@
       this.element.className = "reserva";
       this.element.style.width = `${gameDimensions[0]}px`;
       this.element.style.height = `${gameDimensions[1]}px`;
-      document.body.appendChild(this.element);
+      gameDiv.appendChild(this.element);
     }
   }
 

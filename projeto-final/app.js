@@ -15,10 +15,8 @@ app.use(express.urlencoded({
     extended: true
 }))
 
-//configurando logger
 app.use(morgan('short'))
 
-// configurando handlebars
 app.engine('handlebars', handlebars({
     layoutsDir: path.resolve('app/views/layouts'),
     helpers: helpers,
@@ -28,14 +26,15 @@ app.set('view engine', 'handlebars')
 app.set('views', path.resolve('app/views'))
 
 
-//configurando recursos estáticos
 app.use('/img', [
     express.static(path.resolve('public/img')),
+    express.static(path.resolve('public/assets'))
 ])
 
 app.use('/css', [
     express.static(path.resolve('public/css')),
 ])
+
 
 app.use('/js', [
     express.static(path.resolve('node_modules/jquery/dist/')),
@@ -44,8 +43,6 @@ app.use('/js', [
     express.static(path.resolve('public/js')),
 ])
 
-
-//configurando sass
 app.use(sass({
     src: path.resolve('public/scss'),
     dest: path.resolve('public/css'),

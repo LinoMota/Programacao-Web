@@ -13,7 +13,7 @@ const cursoController       =       require('../app/controllers/curso');
 router.get('/',                     mainController.index)
 router.get('/sobre',                mainController.sobre)
 
-router.get('/game',                 gameController.game)
+router.get('/game',                 gameController.index)
 
 router.get('/interface',            interfaceController.interface)
 
